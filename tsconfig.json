@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+	"esModuleInterop": true,
+    "module": "commonjs",
+    "outDir": "build",
+    "rootDirs": ["."],
+    "paths": {
+      "@grafana/toolkit": ["."]
+    },
+    "useUnknownInCatchVariables": false
+  },
+  "exclude": ["build", "node_modules"],
+  "include": ["src/*.ts"]
+}
