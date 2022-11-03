@@ -8,7 +8,11 @@ export const execute = () => {
         console.log(getVersion())
     })
 
-    program.command('create').description('Create plugin').action(create)
+    program
+        .command('create')
+        .description('Create plugin')
+        .option('--template <string>', 'Template url (optional)')
+        .action(create)
 
     program.command('build').description('Build plugin').action(build)
 

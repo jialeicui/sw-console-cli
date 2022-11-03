@@ -38,6 +38,7 @@ export const getWebpackConf = (): Configuration => {
         experiments: {
             outputModule: true,
         },
+        externals: ['react', 'react-dom'],
         plugins: [
             new CopyWebpackPlugin({
                 patterns: [
@@ -104,15 +105,5 @@ export const getWebpackConf = (): Configuration => {
             extensions: ['.js', '.ts', '.tsx'],
             modules: [dir, 'node_modules'],
         },
-        externals: [
-            ({ request }, callback) => {
-                const prefix = 'starwhale/'
-                if (request?.indexOf(prefix) === 0) {
-                    return callback(undefined, request.slice(prefix.length))
-                }
-
-                callback()
-            },
-        ],
     }
 }
